@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polikat S.A. | Bed Slats Manufacturer</title>
+  <style>
+    :root {
+      --primary-dark-green: #14532d;
+      --accent-green: #27ae60;
+      --light-bg: #f5f7fa;
+      --dark-bg: #2c3e50;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-bg);
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: var(--primary-dark-green);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d4f3df;
+    }
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: url('header-background.jpg') center/cover no-repeat;
+      color: #fff;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+    header img {
+      max-width: 200px;
+      margin-bottom: 1.5rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+      font-weight: 600;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .section:hover {
+      transform: scale(1.01);
+    }
+    .section h2 {
+      font-size: 2rem;
+      border-left: 4px solid var(--primary-dark-green);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tabs button {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background: var(--primary-dark-green);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tabs button.active,
+    .tabs button:hover {
+      background: var(--accent-green);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+    .product-card {
+      background: #e0f2e9;
+      border-left: 4px solid var(--accent-green);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .product-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .contact {
+      background: url('contact-background.jpg') center/cover no-repeat;
+      color: #fff;
+      position: relative;
+    }
+    .contact::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+      border-radius: 12px;
+    }
+    .contact * {
+      position: relative;
+      z-index: 1;
+    }
+    .contact a {
+      color: #ffeaa7;
+      text-decoration: underline;
+    }
+    .lang-switch {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .lang-switch button {
+      background: var(--primary-dark-green);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #d1d8e0;
+      background: var(--dark-bg);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div style="color:white;font-weight:bold;">Polikat S.A.</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <img src="/mnt/data/f47f4f1e-e29a-4adf-9b1b-34fbfb196e62.png" alt="Polikat Logo">
+    <h1>Quality Bed Slats, Made in Poland</h1>
+    <p>Precision. Durability. Sustainability.</p>
+  </header>
+
+  <div class="lang-switch">
+    <button onclick="switchLang('en')">🇬🇧 English</button>
+    <button onclick="switchLang('pl')">🇵🇱 Polski</button>
+  </div>
+
+  <section class="section about" id="about">
+    <h2 data-en="About Us" data-pl="O Nas">About Us</h2>
+    <p data-en="Polikat S.A. is a trusted manufacturer of high-quality bed slats in Poland."
+       data-pl="Polikat S.A. to renomowany producent wysokiej jakości listew sprężynujących w Polsce.">
+      Polikat S.A. is a trusted manufacturer of high-quality bed slats in Poland.
+    </p>
+  </section>
+
+  <section class="section products" id="products">
+    <h2 data-en="Our Products" data-pl="Nasze Produkty">Our Products</h2>
+    <div class="tabs">
+      <button class="active" onclick="showTab(event, 'standard')">Standard</button>
+      <button onclick="showTab(event, 'adjustable')">Adjustable</button>
+      <button onclick="showTab(event, 'custom')">Custom</button>
+    </div>
+    <div id="standard" class="tab-content active">
+      <div class="product-card">
+        <img src="standard1.jpg" alt="Standard Slat">
+        <div data-en="Flexible wooden bed slats" data-pl="Elastyczne listwy drewniane">Flexible wooden bed slats</div>
+      </div>
+    </div>
+    <div id="adjustable" class="tab-content">
+      <div class="product-card">
+        <img src="adjustable1.jpg" alt="Adjustable Slat">
+        <div data-en="Adjustable slat systems" data-pl="Regulowane systemy listew">Adjustable slat systems</div>
+      </div>
+    </div>
+    <div id="custom" class="tab-content">
+      <div class="product-card">
+        <img src="custom1.jpg" alt="Custom Solution">
+        <div data-en="Customized solutions for manufacturers" data-pl="Rozwiązania dostosowane do potrzeb producentów">Customized solutions for manufacturers</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2 data-en="Contact" data-pl="Kontakt">Contact</h2>
+    <p>Email: <a href="mailto:biuro@polikat.pl">biuro@polikat.pl</a></p>
+    <p data-en="Phone: +48 000 000 000" data-pl="Telefon: +48 000 000 000">Phone: +48 000 000 000</p>
+    <p data-en="Address: ul. Przemyslowa 12, 62-300 Wrzesnia, Poland"
+       data-pl="Adres: ul. Przemysłowa 12, 62-300 Września, Polska">Address: ul. Przemyslowa 12, 62-300 Wrzesnia, Poland</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Polikat S.A. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    function showTab(event, tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
